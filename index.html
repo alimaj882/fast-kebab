@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAST KEBAB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="#" class="logo">FAST <span>KEBAB</span></a>
+
+  <nav class="nav">
+    <a href="#contact" data-ro="Contacte" data-ru="Контакты">Contacte</a>
+    <button id="languageButton" class="nav-button">RU</button>
+    <button id="cartButton" class="nav-button">
+      <span data-ro="Coș" data-ru="Корзина">Coș</span>
+      <span id="cartCount">0</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">FAST KEBAB</p>
+      <h1 data-ro="GUSTUL CARE TE CUCEREȘTE"
+          data-ru="ВКУС, КОТОРЫЙ ПОКОРЯЕТ">
+        GUSTUL CARE TE CUCEREȘTE
+      </h1>
+      <p data-ro="Preparat cu grijă. Servit cu gust."
+         data-ru="Приготовлено с заботой. Подаётся со вкусом.">
+        Preparat cu grijă. Servit cu gust.
+      </p>
+      <a href="#menu" class="main-button"
+         data-ro="Vezi meniul" data-ru="Посмотреть меню">
+        Vezi meniul
+      </a>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/20.jpg" alt="FAST KEBAB">
+    </div>
+  </section>
+
+  <section id="menu" class="menu-section">
+    <div id="categoriesView">
+      <div class="section-heading">
+        <p class="eyebrow">FAST KEBAB</p>
+        <h2 data-ro="MENIUL NOSTRU" data-ru="НАШЕ МЕНЮ">MENIUL NOSTRU</h2>
+        <p data-ro="Alege categoria preferată"
+           data-ru="Выбери любимую категорию">
+          Alege categoria preferată
+        </p>
+      </div>
+
+      <div id="categoriesContainer" class="categories-grid"></div>
+    </div>
+
+    <div id="productsView" class="hidden">
+      <button id="backButton" class="back-button">
+        ← <span data-ro="Înapoi la categorii"
+                 data-ru="Назад к категориям">Înapoi la categorii</span>
+      </button>
+
+      <div class="section-heading">
+        <p class="eyebrow">FAST KEBAB</p>
+        <h2 id="categoryTitle"></h2>
+      </div>
+
+      <div id="productsContainer" class="products-grid"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="section-heading">
+      <p class="eyebrow">FAST KEBAB</p>
+      <h2 data-ro="CONTACTEAZĂ-NE" data-ru="СВЯЖИТЕСЬ С НАМИ">
+        CONTACTEAZĂ-NE
+      </h2>
+    </div>
+
+    <div class="contact-card">
+      <h3>FAST KEBAB</h3>
+      <p>
+        <strong data-ro="Adresă:" data-ru="Адрес:">Adresă:</strong>
+        Bd. Moscova 20
+      </p>
+      <p>
+        <strong data-ro="Telefon:" data-ru="Телефон:">Telefon:</strong>
+        <a href="tel:022324766">022 324 766</a>
+      </p>
+      <p>
+        <strong>WhatsApp:</strong>
+        <a href="https://wa.me/37378102090">+373 78 102 090</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <strong>FAST KEBAB</strong>
+  <span>Bd. Moscova 20 · 022 324 766</span>
+</footer>
+
+<div id="cartOverlay" class="cart-overlay"></div>
+
+<aside id="cartPanel" class="cart-panel">
+  <div class="cart-header">
+    <h2 data-ro="Coșul tău" data-ru="Твоя корзина">Coșul tău</h2>
+    <button id="closeCart" class="close-cart">×</button>
+  </div>
+
+  <div id="cartItems" class="cart-items"></div>
+
+  <div class="cart-total">
+    <span data-ro="Total:" data-ru="Итого:">Total:</span>
+    <strong id="cartTotal">0 MDL</strong>
+  </div>
+
+  <form id="orderForm">
+    <h3 data-ro="Date pentru comandă" data-ru="Данные для заказа">
+      Date pentru comandă
+    </h3>
+
+    <label for="customerName" data-ro="Numele tău" data-ru="Твоё имя">
+      Numele tău
+    </label>
+    <input id="customerName" type="text" required>
+
+    <label for="customerPhone" data-ro="Numărul de telefon"
+           data-ru="Номер телефона">Numărul de telefon</label>
+    <input id="customerPhone" type="tel" required>
+
+    <div class="delivery-options">
+      <label class="delivery-option">
+        <input type="radio" name="deliveryType" value="pickup" checked>
+        <span data-ro="Ridicare personală" data-ru="Самовывоз">
+          Ridicare personală
+        </span>
+      </label>
+
+      <label class="delivery-option">
+        <input type="radio" name="deliveryType" value="delivery">
+        <span data-ro="Livrare" data-ru="Доставка">Livrare</span>
+      </label>
+    </div>
+
+    <div id="addressField" class="hidden">
+      <label for="customerAddress" data-ro="Adresa de livrare"
+             data-ru="Адрес доставки">Adresa de livrare</label>
+      <input id="customerAddress" type="text">
+    </div>
+
+    <label for="customerComment" data-ro="Comentariu (opțional)"
+           data-ru="Комментарий (необязательно)">
+      Comentariu (opțional)
+    </label>
+    <textarea id="customerComment" rows="3"></textarea>
+
+    <button class="order-button" type="submit"
+            data-ro="Comandă prin WhatsApp"
+            data-ru="Заказать через WhatsApp">
+      Comandă prin WhatsApp
+    </button>
+  </form>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
